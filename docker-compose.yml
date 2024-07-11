@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:15.3-alpine3.18'
+    environment:
+      - 'POSTGRES_DB=task'
+      - 'POSTGRES_PASSWORD=pass'
+      - 'POSTGRES_USER=user'
+    ports:
+      - "5432:5432"

@@ -1,0 +1,9 @@
+insert into user_property(property, user_email, id) VALUES ('p1', 'test1@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p2', 'test1@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p1', 'test2@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p2', 'test2@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p3', 'test2@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p3', 'test3@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p3', 'test3@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p3', 'test3@engelvoelkers.com', gen_random_uuid());
+insert into user_property(property, user_email, id) VALUES ('p2', 'test2@engelvoelkers.com', gen_random_uuid());

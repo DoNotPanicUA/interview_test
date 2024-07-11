@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /task
+
+spring:
+  application:
+    name: task
+  main:
+    banner-mode: "off"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task
+    username: user
+    password: pass
+
