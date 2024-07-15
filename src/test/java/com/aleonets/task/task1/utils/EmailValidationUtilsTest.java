@@ -17,6 +17,7 @@ class EmailValidationUtilsTest {
 				Arguments.of(" b@a.com"),
 				Arguments.of(" b@@a.com"),
 				Arguments.of("a@test.com"),
+				Arguments.of("a@Test.com"),
 				Arguments.of("a@t.com@")
 		);
 	}

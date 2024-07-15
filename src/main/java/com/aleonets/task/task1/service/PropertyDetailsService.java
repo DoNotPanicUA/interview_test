@@ -74,7 +74,8 @@ public class PropertyDetailsService {
 		List<String> allUsers = userPropertyRepository.findAllUsers();
 		List<UserPropertyEntity> allUserProperties = userPropertyRepository.findAll();
 		log.info("{} vs {}", first.getId(), second.getId());
-		var res = getTop(allUsers, allUserProperties, first, second) / (getDiv(allUsers, allUserProperties, first) + getDiv(allUsers, allUserProperties, second));
+		var res = getTop(allUsers, allUserProperties, first, second) / (getDiv(allUsers, allUserProperties, first) * getDiv(allUsers, allUserProperties,
+				second));
 		log.info("sim: {}", res);
 		return res;
 	}
@@ -88,7 +89,7 @@ public class PropertyDetailsService {
 			text.append(firstCount).append("*").append(secondCount).append("+");
 			result += firstCount * secondCount;
 		}
-		log.info("TOP : {}", text.substring(0, text.length()-1) + ")");
+		log.info("TOP : {} = {}", text.substring(0, text.length() - 1) + ")", result);
 		return result;
 	}
 
@@ -98,19 +99,22 @@ public class PropertyDetailsService {
 		for (String user : allUsers) {
 			var count = countProperties(user, property.getId(), allUserProperties);
 			text.append(count).append("^2+");
-			result += count^2;
+			result += Math.pow(count, 2);
 		}
-		log.info("BOT : {}", text.substring(0, text.length()-1) + ")");
+		log.info("BOT : {} = {}", text.substring(0, text.length() - 1) + ")", sqrt(result));
 		return sqrt(result);
 	}
 
 	private int countProperties(String user, String propertyId, List<UserPropertyEntity> allUserProperties) {
-		return allUserProperties.stream().filter(userPropertyEntity -> userPropertyEntity.getUser().equals(user) && userPropertyEntity.getProperty().equals(propertyId)).toList().size();
+		return allUserProperties.stream()
+				.filter(userPropertyEntity -> userPropertyEntity.getUser().equals(user) && userPropertyEntity.getProperty().equals(propertyId)).toList()
+				.size();
 	}
 
 	@Builder
 	@Getter
 	private static class PropertyWithSimilarity implements Comparable<PropertyWithSimilarity> {
+
 		Double similarity;
 		PropertyEntity propertyEntity;
 

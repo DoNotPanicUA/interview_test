@@ -10,7 +10,6 @@ import com.aleonets.task.task1.config.PostgresContainerConfiguration;
 import com.aleonets.task.task1.util.TestDataUtil;
 import java.util.stream.Stream;
 import lombok.SneakyThrows;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
